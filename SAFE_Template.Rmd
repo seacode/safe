@@ -1,0 +1,179 @@
+---
+title: "SAFE template"
+author: "SSMA Authors"
+date: "7/20/2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Title
+Please use the following convention: “Assessment of the Myfish stock in the Gulf of Alaska” for single-stock assessments and “Assessment of the Myfish stock complex in the Gulf of Alaska” for multi-stock assessments (replacing italicized text appropriately).
+
+# Executive Summary
+
+## Summary of Changes in Assessment Inputs
+List of changes (if any) in the input data, including estimated catches assumed for the current year and projected catches for current year + 1 and current year + 2.
+List of changes (if any) in the assessment methodology. This is one of the most important sections of the SAFE report.  Common mistakes in this section include: 1) listing something that has not changed, and 2) not listing something that has changed.
+
+## Summary of Results
+Text table showing M; recommended Tier; projected total biomass (give age range); female spawning biomass; equilibrium female spawning biomass values for B0 and BMSY (Tier 1 only) or B100%, B40%, and B35% (Tier 3 only); FOFL; the maximum allowable value for FABC; the recommended value for FABC; OFL; the maximum allowable ABC, and the recommended ABC.  State whether the stock or complex is being subjected to overfishing, is currently overfished, or is approaching a condition of being overfished.  Compare all of the above to the corresponding values from last year’s final assessment (or final specifications, if different from the assessment values).  Tier-specific templates for this table are shown on the following pages (notes: 1) the rows labeled “Female spawning biomass (t)” and “Projected” for Tiers 1 and 3 and the row labeled “Biomass (t)” for Tier 5 are headers, so please do not put anything in those rows; 2) the “x” in “age x+” should be replaced with the appropriate value for stocks in Tiers 1 or 3; and 3) cells with “current year…” should be replaced with the appropriate number, where “current year” means this year). A brief discussion of substantial changes in results from last year may be included if it helps explain the summary table. 
+
+Text table of area apportionments (if any) for the recommended one- and two-year ahead ABCs and OFLs, with a brief description of the apportionment methodology.
+
+## Responses to SSC and Plan Team Comments on Assessments in General
+Responses to SSC and Plan Team comments on assessments in general (for each comment that is addressed in the main text, list comment, and reference the section where it is discussed). If the SSC or Plan Team did not make any comments on assessments in general, say so.
+
+## Responses to SSC and Plan Team Comments Specific to this Assessment
+Responses to SSC and Plan Team comments specific to this assessment (for each comment that is addressed in the main text, list comment and reference the section where it is discussed). If the SSC or Plan Team did not make any comments specific to this assessment, say so.  
+
+#Introduction
+Scientific name
+Description of general biology and distribution
+Description of key life history characteristics specific to stock assessments (e.g., special features of reproductive biology)
+Evidence of stock structure, if any
+
+#Fishery
+Brief description of fishery history     
+Description of management measures/unit(s)      
+* Management history (including key changes which may have influenced assessment procedures; selectivity of commercial fishing gear; or distribution of catch by gear, area, or season.     
+* Include a table of total catch, total ABC, total OFL, and total TAC, and associated management measures     
+Description of the current directed fishery (including gear types, seasons, major fishing locations)     
+Description of effort and CPUE     
+Information on discards of this stock or stock complex (from directed fishery for this stock or stock complex)     
+
+# Data      
+(If the data for any particular component described here are so voluminous that the corresponding tables would comprise more than 2 pages, the tables may be placed on an ftp site referenced in the chapter.)     
+For Tiers 1-3, insert a text table summarizing the data used in the assessment model (source, type, years included). The following is a typical example:     
+Data which should be presented as time series (starting no later than 1977, if possible):     
+     
+##Fishery     
+Catch as used in the model (by area and gear if that is how it is used in the model). This table may omitted if this table simply duplicates the catch table shown under “Management units/measures”)     
+In an appendix, present removals from sources other than those that are included in the Alaska Region’s official estimate of catch (e.g., removals due to scientific surveys, subsistence fishing, recreational fishing, fisheries managed under other FMPs)     
+Catch at age or catch at length (including sample sizes), as appropriate     
+
+
+##Survey     
+Survey biomass estimates, including at least one measure of sampling variability such as standard error, CV, or 95% confidence interval (for stocks managed as complexes, be sure to report the sampling variability for the complex-wide survey biomass estimate, not just the individual stocks). Complex-wide variance could be computed simply by summing the variances from the survey estimates.     
+Survey numbers at age or numbers at length (including sample sizes), as appropriate
+
+## Other time series data used in the assessment: 
+If biological data are time-varying in the assessment model (e.g., annual weight at age, length at age), these data should be included for stocks/complexes managed under Tiers 1-3. 
+
+#Analytic Approach
+
+##General Model Structure
+Description of overall modeling approach (e.g., age/size structured versus biomass dynamic, maximum likelihood versus Bayesian)
+If standardized software (e.g., Stock Synthesis) is used, give reference to technical documentation where variables and equations are described.  If standardized software is not used, then list variables and equations used in the assessment model(s) in tables or appendices as appropriate.
+
+## Description of Alternative Models
+Description of alternative models included in the assessment, if any (e.g., alternative M values or likelihood weights); note that the base model (i.e., the model most recently accepted by the SSC, either after reviewing the previous year’s final assessment or the current year’s preliminary assessment) must be included
+Per recommendation of the SSC (10/15), please use the following convention for numbering models:
+When a model constituting a “major change” from the original version of the base model is introduced, it is given a label of the form “Model yy.j,” where yy is the year (designated by the last two digits) that the model was introduced, and j is an integer distinguishing this particular “major change” model from other “major change” models introduced in the same year.
+When a model constituting only a “minor change” from the original version of the base model is introduced, it is given a label of the form “Model yy.jx,” where “x” is a letter distinguishing this particular “minor change” model from other “minor change” models derived from the original version of the same base model.
+Specifically, please use one of the following four options to distinguish “major” from “minor” changes:
+Option A
+The original version of the base model is the base model from the earliest year relative to which the current base model constitutes only a minor change. 
+If Model yy.j is the original version of the base model and some other model (provisionally labeled “Model M”) is introduced in year 20zz, define the “average difference in spawning biomass” (ADSB) between Model M and Model yy.j as:
+
+where both models are run with data through year 20yy only (i.e., the year in which the original version of the base model was introduced).  If ADSB<0.1, the final name of Model M should be of the form “Model yy.jx,” where “x” is a letter.  If ADSB0.1, the final name should be of the form “Model zz.i,” where “i” is an integer.  For Tiers 4-5, survey biomass may be used in place of spawning biomass in the above.
+Option B
+Same as Option A, except that the model approved by the SSC in 2014 is considered to be the original version of the base model in all cases.  The SSC noted that Option B can be used if Option A “poses a significant time commitment for the analyst.”
+Option C
+Same as Option A, except that the distinction between “major” and “minor” model changes is determined subjectively by the author on the basis of qualitative differences in model structure rather than the performance-based criterion described in Option A.  The SSC noted that Option C can be used “where needed.”
+Option D
+Options B and C combined.
+
+## Parameters Estimated Outside the Assessment Model
+(Use the above heading for Tiers 1-3)
+
+## Parameter Estimates
+(Use the above heading for Tiers 4-6)
+List of parameters that are estimated independently of others (e.g., the natural mortality rate, parameters governing the maturity schedule, parameters governing growth [length at age, weight at length or age]—if not estimated inside the assessment model)
+Description of how these parameters are estimated (methods do not necessarily have to be statistical; e.g., M could be estimated by referencing a previously published value)
+
+## Parameters Estimated Inside the Assessment Model
+(This section should be omitted for Tiers 4-6)
+List of parameters that are estimated conditionally on those described above (e.g., full-selection fishing mortality rates, parameters governing the selectivity schedule, parameters governing growth if estimated inside the assessment model)
+Description of how these parameters are estimated (e.g., error structures assumed, prior distributions used, list of likelihood components)
+
+#Results
+
+## Model Evaluation
+(This section should be omitted for Tiers 4-6)
+Conduct within-model retrospective analysis by rerunning each model successively, dropping data one year at a time.  Specifically:
+1.	Include retrospective analysis extending back 10 years, plot spawning biomass estimates and error bars, plot relative differences, and report Mohn's “rho” statistic (see Retrospective Working Group report for formula, not Mohn’s 1999 paper).
+2.	Communicate the uncertainty implied by retrospective variability in biomass estimates.
+3.	For the time being, do not disqualify a model on the grounds of poor retrospective performance alone.
+4.	Do consider retrospective performance as one factor in model selection.
+Description of other criteria used to evaluate the model or to choose between alternative models, including the role (if any) of uncertainty
+Evaluation of the model, if only one model is presented; or evaluation of alternative models and selection of final model, if more than one model is presented
+List of final parameter estimates, with confidence bounds or other statistical measures of uncertainty if possible (if the set of parameters includes quantities listed in the “Time Series Results” section below, the values of these quantities should be presented in the “Time Series Results” section rather than here)  
+Schedules, if any, defined by final parameter estimates
+
+## Time Series Results 
+(This section should be omitted for Tiers 4-6.  For Tiers 1-3, items in this section pertain to the authors’ recommended model.)
+Include a table that has a set of parallel key results) for the previously accepted assessment, compared with new results. At a minimum this table should include spawning biomass and recruitment. 
+Definition of biomass measures used (e.g., age range used in the “age+” biomass)
+Definition of recruitment measures used (e.g., numbers at age 3)
+Table of estimated biomass time series, including age+ biomass and spawning biomass, with confidence bounds or other statistical measure of uncertainty if possible. The time series included in this table should end with estimates for the projection year. Include estimates from previous SAFE for retrospective comparison.
+Table of estimated recruitment time series, including average of year classes spawned after 1976, with confidence bounds or other statistical measure of uncertainty if possible.  Include estimates from previous SAFE for retrospective comparisons
+Table of estimated numbers at age. 
+Graph of estimated biomass time series, with confidence bounds if possible
+Graph of estimated fishing mortality versus estimated spawning stock biomass (phase-plane plot), including applicable OFL and maximum FABC definitions for the stock.  Biomass should be scaled relative to BMSY for Tier 1 stocks and B35% for Tier 3 stocks.  Fishing mortality should be scaled relative to the arithmetic mean of FMSY for Tier 1 stocks and F35% for Tier 3 stocks. Include 2 years of projected F and B in the phase-plane plot.
+
+
+## Harvest Recommendations
+(Items in this section pertain to the authors’ recommended model or approach.  If the structure of the recommended model or approach differs substantively from the model or approach most recently accepted by the SSC after reviewing either last year’s final SAFE report or the current year’s preliminary SAFE report, a set of parallel results for the previously accepted model or approach should be included in an attachment.)
+List of parameter and stock size estimates (or best available proxies thereof) required by limit and target control rules specified in the fishery management plan
+For stocks managed under Tiers 4-5, in addition to estimates of stock size based on last year’s estimation procedure, include stock size estimates using the random effects model code provided by the Survey Averaging Working Group.  Also, for the biomass estimate used in the harvest control rule, include at least one measure of uncertainty such as standard error, CV, or 95% confidence interval (for stocks managed as complexes, be sure to report the uncertainty for the complex-wide survey biomass estimate, not just the individual stocks).Document how this measure of uncertainty is calculated.
+Specification of FOFL (Tiers 1-5 only), OFL, and the maximum permissible FABC (Tiers 1-5 only) or maximum permissible ABC (Tier 6 only)
+
+For Tiers 1-3, include:
+•	List of standard harvest scenarios and description of projection methodology 
+•	Table of 13-year projected catches corresponding to the alternative harvest scenarios, using stochastic methods if possible (mean values or other statistics may be shown in the case of stochastic recruitment scenarios)
+•	Table of 13-year projected spawning biomass corresponding to the alternative harvest scenarios, using stochastic methods if possible (mean values or other statistics may be shown in the case of stochastic recruitment scenarios)
+•	Table of 13-year projected fishing mortality rates corresponding to the alternative harvest scenarios, using stochastic methods if possible (mean values or other statistics may be shown in the case of stochastic recruitment scenarios) 
+Include a section on how current and two future year catches are estimated. These catches should be included in the harvest scenario table under Scenario 2. 
+Discussion of information and rationale, if any, that might warrant setting ABC below the maximum permissible level
+Recommendation of FABC and ABC for the upcoming year and the next. For stocks managed under Tier 3, these recommendations should correspond to Scenario 2, where current and the next two years catches were estimated as described above
+If area apportionment of ABC or OFL is used or recommended, include a subsection titled “Area Allocation of Harvests,” with results and details of the apportionment scheme(s) for upcoming year and the next.  
+State whether: 
+1.	The stock/complex is being subjected to overfishing (determined by comparing the catch from the most recent complete year to the specified OFL for that year),
+2.	The stock/complex is overfished (Tiers 1-3 only), and
+3.	The stock/complex is approaching a condition of being overfished (Tiers 1-3 only).
+
+#Ecosystem Considerations
+(Authors are encouraged to use information contained in the Ecosystem Considerations chapter to assist them in developing stock-specific analyses and to recommend new information for inclusion in future versions of the Ecosystem Considerations chapter.  Time series currently contained in the Ecosystem Considerations chapter may simply be referenced rather than duplicated here.  In cases where stock-specific time series or relationships are used, this information should be included here rather than in the Ecosystem Considerations chapter.)
+
+## Ecosystem Effects on the Stock
+The following factors should be discussed:
+Prey availability/abundance trends (historically, in the present, and in the foreseeable future).  These prey trends could affect growth or survival of a target stock. 
+1)	Predator population trends (historically, in the present, and in the foreseeable future).  These trends could affect stock mortality rates over time.
+2)	Changes in habitat quality (historically, in the present, and in the foreseeable future).  Changes in the physical environment such as temperature, currents, or ice distribution could affect stock migration and distribution patterns, recruitment success, or direct effects of temperature on growth.
+
+## Fishery Effects on the Ecosystem 
+The following factors should be discussed:
+1)	Fishery-specific contribution to bycatch of prohibited species, forage (including herring and juvenile pollock), HAPC biota (in particular, species common to the target fishery), marine mammals, birds, and other sensitive non-target species (including top predators such as sharks, expressed as a percentage of the total bycatch of that species.
+2)	Fishery-specific concentration of target catch in space and time relative to predator needs in space and time (if known) and relative to spawning components.
+3)	Fishery-specific effects on amount of large-size target fish.
+4)	Fishery-specific contribution to discards and offal production.
+5)	Fishery-specific effects on age at maturity and fecundity of the target species.
+6)	Fishery-specific effects on EFH non-living substrate (using gear specific fishing effort as a proxy for amount of possible substrate disturbance). 
+
+# Data Gaps and Research Priorities
+List areas where a significant improvement in the amount of available information would likely result in a significant improvement in the quality of the assessment and the estimates of critical parameters.
+
+#Literature Cited
+List all references cited in the assessment (and make sure that the current assessment cites appropriate previous assessments containing any analyses that are still mentioned but no longer included in the current assessment).
+Omit all references not cited in the assessment (i.e., vestigial references from previous assessments).
+
+#Tables
+
+
+
+
+#Figures
+
+
