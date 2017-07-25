@@ -2,13 +2,25 @@
 title: "SAFE template"
 author: "SSMA Authors"
 date: "7/20/2017"
-output: pdf_document
+output: html_document
+runtime:  shiny
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,cache=FALSE)
+library(shiny)
 ```
-# Title
+# Title 
+``` {r, echo=FALSE}
+# \newcommand{\ffo}{F_{40\%}}
+# \newcommand{\fth}{F_{30\%}}
+# \newcommand{\ftf}{F_{35\%}}
+# \newcommand{\fmsy}{F_{MSY}}
+# \newcommand{\bmsy}{B_{MSY}}
+# \newcommand{\bfo}{B_{40\%}}
+# \newcommand{\btf}{B_{35\%}}
+# # $$ \fth \\ \ftf \\ \fmsy \\ \bmsy \\ \btf \\ \fth $$
+``` 
 Please use the following convention: “Assessment of the Myfish stock in the Gulf of Alaska” for single-stock assessments and “Assessment of the Myfish stock complex in the Gulf of Alaska” for multi-stock assessments (replacing italicized text appropriately).
 
 # Executive Summary
@@ -18,7 +30,7 @@ List of changes (if any) in the input data, including estimated catches assumed 
 List of changes (if any) in the assessment methodology. This is one of the most important sections of the SAFE report.  Common mistakes in this section include: 1) listing something that has not changed, and 2) not listing something that has changed.
 
 ## Summary of Results
-Text table showing M; recommended Tier; projected total biomass (give age range); female spawning biomass; equilibrium female spawning biomass values for B0 and BMSY (Tier 1 only) or B100%, B40%, and B35% (Tier 3 only); FOFL; the maximum allowable value for FABC; the recommended value for FABC; OFL; the maximum allowable ABC, and the recommended ABC.  State whether the stock or complex is being subjected to overfishing, is currently overfished, or is approaching a condition of being overfished.  Compare all of the above to the corresponding values from last year’s final assessment (or final specifications, if different from the assessment values).  Tier-specific templates for this table are shown on the following pages (notes: 1) the rows labeled “Female spawning biomass (t)” and “Projected” for Tiers 1 and 3 and the row labeled “Biomass (t)” for Tier 5 are headers, so please do not put anything in those rows; 2) the “x” in “age x+” should be replaced with the appropriate value for stocks in Tiers 1 or 3; and 3) cells with “current year…” should be replaced with the appropriate number, where “current year” means this year). A brief discussion of substantial changes in results from last year may be included if it helps explain the summary table. 
+Text table showing $M$; recommended Tier; projected total biomass (give age range); female spawning biomass; equilibrium female spawning biomass values for $B_0$ and $B_{MSY}$ (Tier 1 only) or $B_{100\%}$, $B_{40\%}$, and $B_{35\%}$ (Tier 3 only); $F_{OFL}$; the maximum allowable value for $F_{ABC}$; the recommended value for $F_{ABC}$; OFL; the maximum allowable ABC, and the recommended ABC.  State whether the stock or complex is being subjected to overfishing, is currently overfished, or is approaching a condition of being overfished.  Compare all of the above to the corresponding values from last year’s final assessment (or final specifications, if different from the assessment values).  Tier-specific templates for this table are shown on the following pages (notes: 1) the rows labeled “Female spawning biomass (t)” and “Projected” for Tiers 1 and 3 and the row labeled “Biomass (t)” for Tier 5 are headers, so please do not put anything in those rows; 2) the “x” in “age x+” should be replaced with the appropriate value for stocks in Tiers 1 or 3; and 3) cells with “current year…” should be replaced with the appropriate number, where “current year” means this year). A brief discussion of substantial changes in results from last year may be included if it helps explain the summary table. 
 
 Text table of area apportionments (if any) for the recommended one- and two-year ahead ABCs and OFLs, with a brief description of the apportionment methodology.
 
@@ -37,8 +49,11 @@ Evidence of stock structure, if any
 #Fishery
 Brief description of fishery history     
 Description of management measures/unit(s)      
+
 * Management history (including key changes which may have influenced assessment procedures; selectivity of commercial fishing gear; or distribution of catch by gear, area, or season.     
+
 * Include a table of total catch, total ABC, total OFL, and total TAC, and associated management measures     
+
 Description of the current directed fishery (including gear types, seasons, major fishing locations)     
 Description of effort and CPUE     
 Information on discards of this stock or stock complex (from directed fishery for this stock or stock complex)     
@@ -130,16 +145,21 @@ List of parameter and stock size estimates (or best available proxies thereof) r
 For stocks managed under Tiers 4-5, in addition to estimates of stock size based on last year’s estimation procedure, include stock size estimates using the random effects model code provided by the Survey Averaging Working Group.  Also, for the biomass estimate used in the harvest control rule, include at least one measure of uncertainty such as standard error, CV, or 95% confidence interval (for stocks managed as complexes, be sure to report the uncertainty for the complex-wide survey biomass estimate, not just the individual stocks).Document how this measure of uncertainty is calculated.
 Specification of FOFL (Tiers 1-5 only), OFL, and the maximum permissible FABC (Tiers 1-5 only) or maximum permissible ABC (Tier 6 only)
 
-For Tiers 1-3, include:
-•	List of standard harvest scenarios and description of projection methodology 
-•	Table of 13-year projected catches corresponding to the alternative harvest scenarios, using stochastic methods if possible (mean values or other statistics may be shown in the case of stochastic recruitment scenarios)
-•	Table of 13-year projected spawning biomass corresponding to the alternative harvest scenarios, using stochastic methods if possible (mean values or other statistics may be shown in the case of stochastic recruitment scenarios)
-•	Table of 13-year projected fishing mortality rates corresponding to the alternative harvest scenarios, using stochastic methods if possible (mean values or other statistics may be shown in the case of stochastic recruitment scenarios) 
+For Tiers 1-3, include:     
+
+  *	List of standard harvest scenarios and description of projection methodology   
+  *	Table of 13-year projected catches corresponding to the alternative harvest scenarios, using stochastic methods if possible (mean values or other statistics may be shown in the case of stochastic recruitment scenarios)  
+  *	Table of 13-year projected spawning biomass corresponding to the alternative harvest scenarios, using stochastic methods if possible (mean values or other statistics may be shown in the case of stochastic recruitment scenarios)  
+  *	Table of 13-year projected fishing mortality rates corresponding to the alternative harvest scenarios, using stochastic methods if possible (mean values or other statistics may be shown in the case of stochastic recruitment scenarios)   
+  
 Include a section on how current and two future year catches are estimated. These catches should be included in the harvest scenario table under Scenario 2. 
+
 Discussion of information and rationale, if any, that might warrant setting ABC below the maximum permissible level
 Recommendation of FABC and ABC for the upcoming year and the next. For stocks managed under Tier 3, these recommendations should correspond to Scenario 2, where current and the next two years catches were estimated as described above
 If area apportionment of ABC or OFL is used or recommended, include a subsection titled “Area Allocation of Harvests,” with results and details of the apportionment scheme(s) for upcoming year and the next.  
+
 State whether: 
+
 1.	The stock/complex is being subjected to overfishing (determined by comparing the catch from the most recent complete year to the specified OFL for that year),
 2.	The stock/complex is overfished (Tiers 1-3 only), and
 3.	The stock/complex is approaching a condition of being overfished (Tiers 1-3 only).
@@ -150,11 +170,13 @@ State whether:
 ## Ecosystem Effects on the Stock
 The following factors should be discussed:
 Prey availability/abundance trends (historically, in the present, and in the foreseeable future).  These prey trends could affect growth or survival of a target stock. 
+
 1)	Predator population trends (historically, in the present, and in the foreseeable future).  These trends could affect stock mortality rates over time.
 2)	Changes in habitat quality (historically, in the present, and in the foreseeable future).  Changes in the physical environment such as temperature, currents, or ice distribution could affect stock migration and distribution patterns, recruitment success, or direct effects of temperature on growth.
 
 ## Fishery Effects on the Ecosystem 
 The following factors should be discussed:
+
 1)	Fishery-specific contribution to bycatch of prohibited species, forage (including herring and juvenile pollock), HAPC biota (in particular, species common to the target fishery), marine mammals, birds, and other sensitive non-target species (including top predators such as sharks, expressed as a percentage of the total bycatch of that species.
 2)	Fishery-specific concentration of target catch in space and time relative to predator needs in space and time (if known) and relative to spawning components.
 3)	Fishery-specific effects on amount of large-size target fish.
